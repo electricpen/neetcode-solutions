@@ -1,7 +1,6 @@
 // Note: This is leetcode problem# 26:
 // https://leetcode.com/problems/remove-duplicates-from-sorted-array/
 // Note 2: The official leetcode problem requires O(1) space, and that you mutate the original array
-// I have provided additional examples of approaches to the problem that do not mutate the original (but take O(n) space)
 
 const removeDuplicatesNaive = (sortedArray) => {
     for(let index in sortedArray) {
@@ -41,7 +40,7 @@ const removeDuplicatesSpeed = (sortedArray) => {
 
     for(let index = 0; index < sortedArray.length; index++) {
         const currentElement = sortedArray[index]
-        
+
         if(currentElement !== lastUniqueElement) {
             lastUniqueElement = currentElement
             lastUniqueIndex++
