@@ -1,3 +1,6 @@
+// Note: This is leetcode problem# 26:
+// https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+
 const removeDuplicatesNaive = (sortedArray) => {
     // Note: This method dangerously mutates the input
 
