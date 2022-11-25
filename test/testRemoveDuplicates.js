@@ -2,6 +2,24 @@ const { removeDuplicates } = require('../remove_duplicates_sorted_array/removeDu
 const assert = require('assert')
 const { describe, it } = require('mocha')
 
+const unique = (list) => {
+    results = new Set(list)
+    return Array.from(results)
+}
+
+const duplicateInputs = [
+    [1,2,2,3],
+    [1,1,2],
+    [0,0,1,1,1,2,2,3,3,4]
+]
+
+const nonDuplicateInputs = [
+    [1],
+    [1,2],
+    [1,2,3],
+    [1,2,3,4,5]
+]
+
 describe('Basic functionality of removeDuplicates', () => {
     const results = removeDuplicates([1,2,3,4,5])
 
@@ -19,32 +37,34 @@ describe('When input array is empty', () => {
     })
 })
 
-describe('An array with no duplicates', () => {
-    const input = [1,2,3]
-    const results = removeDuplicates(input)
-
-    it('should return an array with the same length', () => {
-        assert.equal(results.length, input.length)
-    })
-    it('should have identical contents to the input array', () => {
-        input.forEach((element, index) => {
-            assert.equal(results[index], element)
+nonDuplicateInputs.forEach(input => {
+    describe('An array with no duplicates', () => {
+        const nonMutatedInput = [...input]
+        const results = removeDuplicates(input)
+    
+        it('should return an array with the same length', () => {
+            assert.equal(results.length, input.length)
+        })
+        it('should have identical contents to the input array', () => {
+            input.forEach((element, index) => {
+                assert.equal(results[index], element)
+            })
         })
     })
 })
 
-describe('An array with duplicates', () => {
-    const input = [1,2,2,3]
-    const results = removeDuplicates(input)
-    console.log(results)
-
-    it('should not return an array with the same length', () => {
-        assert.notEqual(results.length, 4)
-        assert.equal(results.length, 3)
-    })
-    it('should have identical contents to the input array', () => {
-        assert.equal(results[0], 1)
-        assert.equal(results[1], 2)
-        assert.equal(results[2], 3)
-    })
+duplicateInputs.forEach(input => {
+    describe('An array with duplicates', () => {
+        const nonMutatedInput = [...input]
+        const results = removeDuplicates(input)
+        console.log(results)
+    
+        it('should not return an array with the same length', () => {
+            assert.notEqual(results.length, nonMutatedInput.length)
+            assert.equal(results.length, unique(input).length)
+        })
+        it('should have identical contents to the input array', () => {
+            assert.deepEqual(results, unique(input))
+        })
+    })    
 })

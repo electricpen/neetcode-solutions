@@ -1,9 +1,9 @@
 // Note: This is leetcode problem# 26:
 // https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+// Note 2: The official leetcode problem requires O(1) space, and that you mutate the original array
+// I have provided additional examples of approaches to the problem that do not mutate the original (but take O(n) space)
 
 const removeDuplicatesNaive = (sortedArray) => {
-    // Note: This method dangerously mutates the input
-
     for(let index in sortedArray) {
         const lastElement = index === 0 ? undefined : sortedArray[index -1]
         const currentElement = sortedArray[index]
@@ -15,11 +15,11 @@ const removeDuplicatesNaive = (sortedArray) => {
     return sortedArray
 }
 
-const removeDuplicatesBest = (sortedArray) => {
+const removeDuplicatesNonDestructive = (sortedArray) => {
     // this method is O(n) space but also does not mutate the input array
     // the Naive approach both mutates the input array and is O(n^2) time complexity (this is O(n))
     // the Dangerous speed approach is similar in speed to this approach but mutates the input
-    // therefore this is probably the best overall approach to this problem
+    // therefore this is probably the best overall approach if not allowed to mutate the original
     
     const results = []
 
@@ -35,13 +35,13 @@ const removeDuplicatesBest = (sortedArray) => {
     return results
 }
 
-const removeDuplicatesDangerousSpeed = (sortedArray) => {
-    // Note: This method also mutates input
+const removeDuplicatesSpeed = (sortedArray) => {
     let lastUniqueIndex = -1
     let lastUniqueElement = undefined
 
     for(let index = 0; index < sortedArray.length; index++) {
         const currentElement = sortedArray[index]
+        
         if(currentElement !== lastUniqueElement) {
             lastUniqueElement = currentElement
             lastUniqueIndex++
@@ -59,4 +59,4 @@ const removeDuplicatesDangerousSpeed = (sortedArray) => {
 }
 
 // Change the export to a different function name if you wish to test a variation
-module.exports = {removeDuplicates: removeDuplicatesBest}
+module.exports = {removeDuplicates: removeDuplicatesSpeed}
