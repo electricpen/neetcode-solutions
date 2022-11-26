@@ -57,7 +57,6 @@ duplicateInputs.forEach(input => {
     describe('An array with duplicates', () => {
         const nonMutatedInput = [...input]
         const results = removeDuplicates(input)
-        console.log(results)
     
         it('should not return an array with the same length', () => {
             assert.notEqual(results.length, nonMutatedInput.length)
