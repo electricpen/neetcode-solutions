@@ -1,3 +1,4 @@
-const removeElement = (inputList, element) => {
+const removeElement = (nums, val) => {
     // Your code here
+
 }
