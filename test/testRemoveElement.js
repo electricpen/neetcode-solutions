@@ -1,4 +1,4 @@
-const { removeElement } = require('../remove_element/removeElement')
+const { removeElement } = require('../removeElement/removeElement')
 const assert = require('assert')
 const { describe, it } = require('mocha')
 
