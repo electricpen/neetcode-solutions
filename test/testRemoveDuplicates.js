@@ -1,4 +1,4 @@
-const { removeDuplicates } = require('../remove_duplicates_sorted_array/removeDuplicates')
+const { removeDuplicates } = require('../removeDuplicatesSortedArray/removeDuplicates')
 const assert = require('assert')
 const { describe, it } = require('mocha')
 
