@@ -9,3 +9,6 @@
 ### How to test your code:
 - run `npm test -- test/`[testFileName]
 - example `npm test -- test/testRemoveDuplicates.js`
+
+### How to checkout just the worksheet branch (no solutions - but does include whiteboards)
+- run `git clone -b worksheet https://github.com/electricpen/neetcode-solutions`
