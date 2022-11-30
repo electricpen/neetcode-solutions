@@ -1,7 +1,6 @@
 const { calPoints } = require('../baseballGame/baseballGame')
 const assert = require('assert')
 const { describe, it } = require('mocha')
-const { CallTracker } = require('assert')
 
 describe('calPoints', () => {
     const input = ["5","2","C","D","+"]
