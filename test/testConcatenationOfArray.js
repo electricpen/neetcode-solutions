@@ -2,7 +2,7 @@ const { getConcatenation } = require('../concatenationOfArray/concatenationOfArr
 const assert = require('assert')
 const { describe, it } = require('mocha')
 
-describe('Basic functionality of getConcatenation', () => {
+describe('getConcatenation', () => {
     const input = [1, 2, 1]
     const results = getConcatenation(input)
 

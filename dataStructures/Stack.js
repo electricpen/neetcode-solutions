@@ -19,6 +19,7 @@ class Stack {
         return this.storage.length
     }
 }
+
 module.exports = {
     Stack: Stack
 }

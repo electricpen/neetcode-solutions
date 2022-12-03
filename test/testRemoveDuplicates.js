@@ -20,7 +20,7 @@ const nonDuplicateInputs = [
     [1,2,3,4,5]
 ]
 
-describe('Basic functionality of removeDuplicates', () => {
+describe('removeDuplicates', () => {
     const results = removeDuplicates([1,2,3,4,5])
 
     it('should return an array', () => {
@@ -28,7 +28,7 @@ describe('Basic functionality of removeDuplicates', () => {
     })
 })
 
-describe('When input array is empty', () => {
+describe('removeDuplicates when given empty input', () => {
     const input = []
     const results = removeDuplicates(input)
 
@@ -38,7 +38,7 @@ describe('When input array is empty', () => {
 })
 
 nonDuplicateInputs.forEach(input => {
-    describe('An array with no duplicates', () => {
+    describe('removeDuplicates when given no duplicates', () => {
         const nonMutatedInput = [...input]
         const results = removeDuplicates(input)
     
@@ -54,7 +54,7 @@ nonDuplicateInputs.forEach(input => {
 })
 
 duplicateInputs.forEach(input => {
-    describe('An array with duplicates', () => {
+    describe('removeDuplicates when given duplicates', () => {
         const nonMutatedInput = [...input]
         const results = removeDuplicates(input)
     
