@@ -87,6 +87,14 @@ class LinkedList {
         return found
     }
 
+    forEach(callback) {
+        let pointer = this.head
+        while(pointer) {
+            callback(pointer)
+            pointer = pointer.next
+        }
+    }
+
     pushValuesToList(values) {
         for(let value of values) {
             this.push(value)
