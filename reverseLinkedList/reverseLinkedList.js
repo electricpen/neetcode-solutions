@@ -47,6 +47,6 @@ class ReversableList extends LinkedList {
 }
 
 module.exports = {
-    reverseList: reverseList
+    reverseList: reverseList,
     ReversableList: ReversableList
 }
