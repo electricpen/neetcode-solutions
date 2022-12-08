@@ -5,6 +5,10 @@
 - Clone your forked copy
 - Navigate into the project root
 - run `npm install`
+
+### Note about the tests
+- The tests are importing the classes and functions to test from the provided files
+- If you write your own classes or files make sure to modify the exports and test require lines to match
   
 ### How to test your code:
 - run `npm test -- test/`[testFileName]
