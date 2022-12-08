@@ -12,27 +12,8 @@ class ListNode {
 }
 
 const reverseList = head => {
-    // if a list has zero or one element then it does not need to be reversed
-    if(head === null || head?.next === null) {
-        return head
-    }
-    let prev = null
-    let curr = head
-    let next = head.next
 
-    while(curr !== null) {
-        curr.next = prev
-        prev = curr
-        curr = next
-        next = next ? next.next : null
-    }
-
-    return prev
 }
-
-// let inputList = new ListNode(1)
-// inputList.next = new ListNode(2)
-// console.log(reverseList(inputList))
 
 // If you prefer to do this as a class, use the code below
 // Highly recommend writing your own linked list class to extend for this problem
@@ -44,11 +25,6 @@ class ReversableList extends LinkedList {
 
     reverse() {
         // your code here, return a reversed list
-        const reversedList = new ReversableList()
-        this.forEach(node => {
-            reversedList.unshift(node.value)
-        })
-        return reversedList
     }
 }
 
