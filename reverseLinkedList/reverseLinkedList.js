@@ -30,10 +30,6 @@ const reverseList = head => {
     return prev
 }
 
-// let inputList = new ListNode(1)
-// inputList.next = new ListNode(2)
-// console.log(reverseList(inputList))
-
 // If you prefer to do this as a class, use the code below
 // Highly recommend writing your own linked list class to extend for this problem
 // If you don't want to write one you can use the LinkedList provided in the dataStructures directory
