@@ -111,6 +111,24 @@ class LinkedList {
         return size
     }
 
+    equals(list) {
+        if(this.len() !== list.len()) {
+            return false
+        }
+
+        let ourPointer = this.head
+        let comparePointer = list.head
+        while(ourPointer !== null && comparePointer !== null) {
+            if(ourPointer.value !== comparePointer.value) {
+                return false
+            }
+
+            ourPointer = ourPointer.next
+            comparePointer = comparePointer.next
+        }
+        return true
+    }
+
     print() {
         let output = []
         let pointer = this.head

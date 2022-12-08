@@ -5,28 +5,34 @@ const { LinkedList } = require('../dataStructures/LinkedList')
 
 // the leetcode version of this problem does not use a LinkedList class, it uses the following data structure:
 class ListNode {
-    super(val, next) {
+    constructor(val, next) {
         this.val = (val===undefined ? 0 : val)
         this.next = (next===undefined ? null : next)
     }
 }
 
 const reverseList = head => {
-    const reversedList = new ListNode()
-    let pointer = head
-    let reversePointer = null
-    while(pointer.val !== 0) {
-        if(reversePointer) {
-            reversePointer.next = pointer
-            reversePointer = reversePointer.next
-        } else {
-            reversedList = head
-            reversePointer = head
-        }
+    // if a list has zero or one element then it does not need to be reversed
+    if(head === null || head?.next === null) {
+        return head
+    }
+    let prev = null
+    let curr = head
+    let next = head.next
+
+    while(curr !== null) {
+        curr.next = prev
+        prev = curr
+        curr = next
+        next = next ? next.next : null
     }
 
-    return reversedList
+    return prev
 }
+
+// let inputList = new ListNode(1)
+// inputList.next = new ListNode(2)
+// console.log(reverseList(inputList))
 
 // If you prefer to do this as a class, use the code below
 // Highly recommend writing your own linked list class to extend for this problem
@@ -48,5 +54,6 @@ class ReversableList extends LinkedList {
 
 module.exports = {
     reverseList: reverseList,
-    ReversableList: ReversableList
+    ReversableList: ReversableList,
+    ListNode: ListNode
 }
