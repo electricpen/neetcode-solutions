@@ -31,7 +31,16 @@ const reverseList = head => {
 }
 
 // If you prefer to do this as a class, use the code below
-// Highly recommend writing your own linked list class to extend for this problem
+
+// Note:
+// Highly recommend writing your own linked list class to extend for this problem 
+// (If you do, remove or comment the LinkedList require on line 4 of this file)
+// The tests require that your LinkedList class have the following properties:
+// push: function (takes a value as an argument - not a node)
+// the Nodes in your list must have the following properties:
+// next: default to null, is a pointer to the next node in the list
+// value: holds the value of the node
+
 // If you don't want to write one you can use the LinkedList provided in the dataStructures directory
 class ReversableList extends LinkedList {
     constructor(values) {
