@@ -3,35 +3,39 @@ const assert = require('assert')
 const { describe, it } = require('mocha')
 
 describe('calPoints', () => {
-    const input = ["5","2","C","D","+"]
-    const results = calPoints(input)
+    let input = []
+    let results
+    let testIndex = 0
 
-    it('should return a number', () => {
-        assert.equal(typeof results, "number")
+    
+    const testInput = [
+        [[], 0],
+        [["5","2","C","D","+"], 30],
+        [["5","-2","4","C","D","9","+","+"], 27],
+        [["1", "C"], 0]
+    ]
+    
+    beforeEach(() => {
+        [input, expectedResults] = testInput[testIndex]
+        results = calPoints(input)
+        
+        testIndex++
     })
-
-    it('should return the correct score', () => {
-        assert.equal(results, 30)
-    })
-
-    const input2 = ["5","-2","4","C","D","9","+","+"]
-    const results2 = calPoints(input2)
-
-    it('should return the correct score', () => {
-        assert.equal(results2, 27)
-    })
-
-    const input3 = ["1","C"]
-    const results3 = calPoints(input3)
-
-    it('should return the correct score', () => {
-        assert.equal(results3, 0)
-    })
-
-    const input4 = []
-    const results4 = calPoints(input4)
 
     it('should return 0 for an empty operations list', () => {
-        assert.equal(results4, 0)
+        assert.equal(results, 0)
+    })
+    
+    it('should return the correct score', () => {
+        assert.equal(typeof results, "number")
+        assert.equal(results, expectedResults)
+    })
+
+    it('should return the correct score', () => {
+        assert.equal(results, expectedResults)
+    })
+
+    it('should return the correct score', () => {
+        assert.equal(results, expectedResults)
     })
 })
